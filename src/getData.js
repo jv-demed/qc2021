@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-export default function getPlayers(){
+export default function getData(prop, query){
     
-    const [players, setPlayers] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
 
@@ -13,20 +13,14 @@ export default function getPlayers(){
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify({ 'query': `query{
-                allPlayers{
-                    id
-                    nick
-                }   
-            }`})
+            body: JSON.stringify({ 'query': `query{${query}}`})
         })
         .then((res) => res.json())
         .then((complete) => {
-            const datoPlayers = complete.data.allPlayers;
-            setPlayers(datoPlayers);
+            setData(complete.data[prop]);
         })
     
     }, []);
 
-    return players;
+    return data;
 }

@@ -1,0 +1,2 @@
+- Retirar o link do Dato do fetch para uma variável em outro arquivo
+- Retirar o token do fetch para uma variável em outro arquivo
