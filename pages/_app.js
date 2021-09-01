@@ -1,24 +1,16 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-
-const GlobalStyle = createGlobalStyle`
-  body{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`
-
-const theme = {
-  colors: {
-    primary: '#0070f3',
-  },
-}
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../src/styles/GlobalStyle';
+import Typography from '../src/styles/Typography';
+import Theme from '../src/styles/Theme';
+import Header from '../src/components/Header';
 
 export default function App({ Component, pageProps }){
   return(
     <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={Theme}>
+        <Typography />
+        <GlobalStyle />
+        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
