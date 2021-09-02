@@ -1,8 +1,8 @@
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../src/styles/GlobalStyle';
-import Typography from '../src/styles/Typography';
-import Theme from '../src/styles/Theme';
-import Header from '../src/components/Header';
+import GlobalStyle from '../src/styles/global/GlobalStyle';
+import Typography from '../src/styles/global/Typography';
+import Theme from '../src/styles/global/Theme';
+import Header from '../src/components/Header/Header';
 
 export default function App({ Component, pageProps }){
   return(

@@ -9,8 +9,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body{
-        background-image: url(${({ theme }) => theme.background.home});
+        background-image: url(${({ theme }) => theme.backgrounds.home});
         background-size: cover;
+        font-family: 'Roboto', sans-serif;
         height: 100vh;
     }
 

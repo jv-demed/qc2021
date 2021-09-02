@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components'
 
 const HeaderStyled = styled.header`
     align-items: center;
-    background-color: ${({ theme }) => theme.background.header};
+    background-color: ${({ theme }) => theme.opacities.header};
     color: ${({ theme }) => theme.colors.white};
     display: flex;
     font-family: 'Bebas Neue', cursive;;
@@ -13,11 +12,4 @@ const HeaderStyled = styled.header`
     padding: 0 40px;
 `
 
-export default function Header(){
-    return(
-        <HeaderStyled>
-            <span>Quarantine Championship</span>
-            <div>oi</div>
-        </HeaderStyled>
-    )
-}
+export default HeaderStyled;

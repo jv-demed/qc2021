@@ -1,17 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
-import Ranking from '../src/components/Ranking';
-
-const HomeStyled = styled.div`
-  color: white;
-  height: 88vh;
-`
+import Page from '../src/styles/components/Page';
+import Ranking from '../src/components/Ranking/Ranking';
 
 export default function Home(){
 
   return(
-    <HomeStyled>
+    <Page>
       <Ranking />
-    </HomeStyled>
+    </Page>
   )
 }
