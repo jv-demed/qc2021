@@ -15,6 +15,11 @@ const GlobalStyle = createGlobalStyle`
         height: 100vh;
     }
 
+    a{
+        color: ${({ theme }) => theme.colors.text};
+        text-decoration: none;
+    }
+
     .rb{
         border: 1px solid red;
     }
