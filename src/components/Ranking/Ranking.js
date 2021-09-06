@@ -9,10 +9,10 @@ export default function Ranking(){
         allPlayers{
             id
             nick
-            matchs
+            matches
         }
     `);
-    console.log(players)
+    //console.log(players)
 
     return(
         <Box>
@@ -22,7 +22,7 @@ export default function Ranking(){
                         <th/>
                         <th>Players</th>
                         <th>QR</th>
-                        <th>Matchs</th>
+                        <th>Matches</th>
                         <th>Wins</th>
                         <th>%W</th>
                     </tr>
@@ -33,10 +33,10 @@ export default function Ranking(){
                                 <td>
                                     <a href={`/${pl.nick}`}>{pl.nick}</a>
                                 </td>
-                                <td className='info'>{pl.matchs}</td>
-                                <td className='info'>{pl.matchs}</td>
-                                <td className='info'>{pl.matchs}</td>
-                                <td className='info'>{pl.matchs}</td>
+                                <td className='info'>{pl.matches}</td>
+                                <td className='info'>{pl.matches}</td>
+                                <td className='info'>{pl.matches}</td>
+                                <td className='info'>{pl.matches}</td>
                             </tr>
                         )
                     })}
