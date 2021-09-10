@@ -5,7 +5,7 @@ import MatchList from '../src/components/MatchList/MatchList';
 export default function Season2020(){
     return(
         <Page>
-            <MatchList season='2020' />
+            <MatchList season='Season 1 / 2020' />
         </Page>
     )
 }

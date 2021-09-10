@@ -9,6 +9,11 @@ export default function Ranking(){
         allPlayers{
             id
             nick
+            score
+            wins
+            winRate
+            killingSpree
+            ksRate
             matches
         }
     `);
@@ -21,21 +26,25 @@ export default function Ranking(){
                     <tr>
                         <th/>
                         <th>Players</th>
-                        <th>QR</th>
-                        <th>Matches</th>
-                        <th>Wins</th>
+                        <th>SC</th>
+                        <th>W</th>
                         <th>%W</th>
+                        <th>KS</th>
+                        <th>%KS</th>
+                        <th>MTS</th>
                     </tr>
-                    {players.map((pl) => {
+                    {players.map((pl, i) => {
                         return(
                             <tr key={pl.id}>
-                                <td className='info'>12</td>
+                                <td className='info'>{i+1}</td>
                                 <td>
                                     <a href={`/${pl.nick}`}>{pl.nick}</a>
                                 </td>
-                                <td className='info'>{pl.matches}</td>
-                                <td className='info'>{pl.matches}</td>
-                                <td className='info'>{pl.matches}</td>
+                                <td className='info'>{pl.score}</td>
+                                <td className='info'>{pl.wins}</td>
+                                <td className='info'>{pl.winRate}%</td>
+                                <td className='info'>{pl.killingSpree}</td>
+                                <td className='info'>{pl.ksRate}%</td>
                                 <td className='info'>{pl.matches}</td>
                             </tr>
                         )

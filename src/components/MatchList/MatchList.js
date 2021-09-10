@@ -6,36 +6,67 @@ import dataUpdate from '../../dataUpdate';
 
 export default function MatchList(props){
 
-    const matches = getData('allMatches', `
-        allMatches{
-            flag
+    const seasons = getData('allSeasons', `
+        allSeasons{
             id
-            match
-            season
-            player1{
+            year
+            rounds{
                 id
-                matches
+                round
+                matches{
+                    id
+                    flag
+                    match
+                    player1{
+                        id
+                        wins
+                        winRate
+                        killingSpree
+                        ksRate
+                        matches
+                    }
+                    player2{
+                        id
+                        wins
+                        winRate
+                        killingSpree
+                        ksRate
+                        matches
+                    }
+                    game1{
+                        id
+                        winner{
+                            id
+                        }
+                    }
+                    game2{
+                        id
+                        winner{
+                            id
+                        }
+                    }
+                }
             }
-            player2{
+            players{
                 id
-                matches
             }
         }
-    `)
-    //console.log(matches);
+    `);
 
     return(
         <Box>
             <MatchListStyled>
                 <ul>
-                    {matches.map((match) => {
-                        if(match.season == props.season){
-                            if(!match.flag){
-                                dataUpdate('/api/matchUpdate', match);
-                            }
-                            return(
-                                <li key={match.id}>{match.match}</li>
-                            )
+                    {seasons.map((season) => {
+                        if(season.year == props.season){
+                            return season.rounds.map((round) => {
+                                return round.matches.map((match) => {
+                                    dataUpdate('/api/matchUpdate', match);
+                                    return(
+                                        <li key={match.id}>{match.match}</li>
+                                    )
+                                })
+                            })
                         }
                     })}
                 </ul>

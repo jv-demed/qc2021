@@ -10,6 +10,7 @@ const RankingStyled = styled.table`
     }
     .info{
         text-align: center;
+        width: 55px;
     }
 `
 
